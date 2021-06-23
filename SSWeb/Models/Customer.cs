@@ -11,6 +11,11 @@ namespace SSWeb.Models
     public class Customer
     {
         [Key]
+
+
+
+        // tesst pull request
+
         public int Id { get; set; }
      
         [Required(ErrorMessage = "{0} is not empty")]
