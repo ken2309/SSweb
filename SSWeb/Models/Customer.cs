@@ -11,9 +11,6 @@ namespace SSWeb.Models
     public class Customer
     {
         [Key]
-
-        //test branch
-
         public int Id { get; set; }
      
         [Required(ErrorMessage = "{0} is not empty")]
