@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    string name = "Tyrus";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <p>Current time: @DateTime.Now</p>
+    @{ 
+        if (DateTime.Now.Hour <= 12)
+        {
+            <p>Good morning, @name</p>
+        }
+        else
+        {
+            <p>Good afternoon, @name</p>
+        }
+    }
+    <p>Temperature: @ViewData["nhietdo"]<sup>o</sup>C</p>
+    <p>Humidity: @ViewBag.doam%</p>
+</div>
