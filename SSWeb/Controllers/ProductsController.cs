@@ -156,5 +156,15 @@ namespace SSWeb.Controllers
         {
             return _context.Products.Any(e => e.Id == id);
         }
+
+        public IActionResult Search(string keyword, int min = 0, int max = Int32.MaxValue)
+        {
+            if (keyword == null && min == 0 && max == Int32.MaxValue)
+            {
+                return View();
+            }
+            var result = _context.Products.Where(prd => prd.Name.Contains(keyword) && prd.Price >= min && prd.Price <= max).ToList();
+            return View(result);
+        }
     }
 }

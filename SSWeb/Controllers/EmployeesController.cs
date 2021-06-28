@@ -149,5 +149,25 @@ namespace SSWeb.Controllers
         {
             return _context.Employees.Any(e => e.Id == id);
         }
+
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Login(string username, string password)
+        {
+            bool result = _context.Employees.Any(acc => acc.Username == username && acc.Password == password);
+            if (result)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                ViewBag.ErrorMsg = "Login failed!";
+                return View();
+            }
+        }
     }
 }
