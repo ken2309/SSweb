@@ -20,8 +20,6 @@ namespace SSWeb.Controllers
 
         public IActionResult Index()
         {
-            ViewBag.temp = 28;
-            ViewData["Wind Speed"] = 89;
             return View();
         }
 

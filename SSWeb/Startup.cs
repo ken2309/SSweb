@@ -52,7 +52,7 @@ namespace SSWeb
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
-                    name: "areas",
+                    name: "Areas",
                     pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
             });
 
