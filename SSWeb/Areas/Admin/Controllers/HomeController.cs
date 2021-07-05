@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace SSWeb.Areas.Admin.Controllers
 {
+    [Area("Admin")]
+    [Route("admin")]
     public class HomeController : Controller
     {
         public IActionResult Index()
