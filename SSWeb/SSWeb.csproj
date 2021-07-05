@@ -20,9 +20,10 @@
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\Home\" />
+    <Folder Include="wwwroot\css\" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="Microsoft.EntityFrameworkCore" />
+    <Content Remove="wwwroot\css\" />
   </ItemGroup>
 </Project>
