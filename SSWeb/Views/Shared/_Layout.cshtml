@@ -5,23 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - SSWeb</title>
     @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />*@
+        <link rel="stylesheet" href="~/css/site.css" />*@
 
     <!-- Bootstrap CSS -->
     @*<link rel="stylesheet" href="~/css/bootstrap.css" />
-    <link rel="stylesheet" href="~/vendors/linericon/style.css" />
-    <link rel="stylesheet" href="~/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="~/css/themify-icons.css" />
-    <link rel="stylesheet" href="~/css/flaticon.css" />
-    <link rel="stylesheet" href="~/vendors/owl-carousel/owl.carousel.min.css" />
-    <link rel="stylesheet" href="~/vendors/lightbox/simpleLightbox.css" />
-    <link rel="stylesheet" href="~/vendors/nice-select/css/nice-select.css" />
-    <link rel="stylesheet" href="~/vendors/animate-css/animate.css" />
-    <link rel="stylesheet" href="~/vendors/jquery-ui/jquery-ui.css" />*@
+        <link rel="stylesheet" href="~/vendors/linericon/style.css" />
+        <link rel="stylesheet" href="~/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="~/css/themify-icons.css" />
+        <link rel="stylesheet" href="~/css/flaticon.css" />
+        <link rel="stylesheet" href="~/vendors/owl-carousel/owl.carousel.min.css" />
+        <link rel="stylesheet" href="~/vendors/lightbox/simpleLightbox.css" />
+        <link rel="stylesheet" href="~/vendors/nice-select/css/nice-select.css" />
+        <link rel="stylesheet" href="~/vendors/animate-css/animate.css" />
+        <link rel="stylesheet" href="~/vendors/jquery-ui/jquery-ui.css" />*@
 
 
     <link rel="apple-touch-icon" href="~/img/img/apple-icon.png">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="~/img/apple-icon.png">
 
     <link rel="stylesheet" href="~/css/bootstrap.min.css">
     <link rel="stylesheet" href="~/css/templatemo.css">
@@ -30,6 +30,9 @@
     <!-- Load fonts style after rendering the layout styles -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
     <link rel="stylesheet" href="~/css/fontawesome.min.css">
+
+    <!-- Load map styles -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
 </head>
 <body>
     @* <header>
@@ -78,8 +81,8 @@
     <nav class="navbar navbar-expand-lg navbar-light shadow">
         <div class="container d-flex justify-content-between align-items-center">
 
-            <a class="navbar-brand text-success logo h1 align-self-center" href="index.html">
-                Zay
+            <a class="navbar-brand text-success logo h1 align-self-center" asp-area="" asp-controller="Home" asp-action="Index">
+                Star securities
             </a>
 
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -90,16 +93,16 @@
                 <div class="flex-fill">
                     <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="index">Home</a>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/about">About</a>
+                            <a class="nav-link"asp-area="" asp-controller="About" asp-action="Index">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/shop">Shop</a>
+                            <a class="nav-link" asp-area="" asp-controller="Products" asp-action="Index">Shop</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/contact">Contact</a>
+                            <a class="nav-link" asp-area="" asp-controller="Contact" asp-action="Index">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -159,7 +162,7 @@
             <div class="row">
 
                 <div class="col-md-4 pt-5">
-                    <h2 class="h2 text-success border-bottom pb-3 border-light logo">Zay Shop</h2>
+                    <h2 class="h2 text-success border-bottom pb-3 border-light logo">Star securities </h2>
                     <ul class="list-unstyled text-light footer-link-list">
                         <li>
                             <i class="fas fa-map-marker-alt fa-fw"></i>
@@ -192,11 +195,11 @@
                 <div class="col-md-4 pt-5">
                     <h2 class="h2 text-light border-bottom pb-3 border-light">Further Info</h2>
                     <ul class="list-unstyled text-light footer-link-list">
-                        <li><a class="text-decoration-none" href="#">Home</a></li>
-                        <li><a class="text-decoration-none" href="#">About Us</a></li>
-                        <li><a class="text-decoration-none" href="#">Shop Locations</a></li>
+                        <li><a class="text-decoration-none" asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li><a class="text-decoration-none" asp-area="" asp-controller="About" asp-action="Index">About Us</a></li>
+                        <li><a class="text-decoration-none" asp-area="" asp-controller="Contact" asp-action="Index">Contact</a></li>
                         <li><a class="text-decoration-none" href="#">FAQs</a></li>
-                        <li><a class="text-decoration-none" href="#">Contact</a></li>
+                        <li><a class="text-decoration-none" asp-area="" asp-controller="Contact" asp-action="Index">Contact</a></li>
                     </ul>
                 </div>
 
@@ -238,7 +241,7 @@
                     <div class="col-12">
                         <p class="text-left text-light">
                             Copyright &copy; 2021 Company Name
-                            | Designed by <a rel="sponsored" href="https://templatemo.com" target="_blank">TemplateMo</a>
+                            | Designed by SStech</a>
                         </p>
                     </div>
                 </div>
