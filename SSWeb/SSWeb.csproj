@@ -21,9 +21,15 @@
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\Home\" />
     <Folder Include="wwwroot\css\" />
+    <Folder Include="Views\About\" />
+    <Folder Include="Views\About %28copy%29\" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Remove="wwwroot\css\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Views\About\" />
+    <None Remove="Views\About %28copy%29\" />
   </ItemGroup>
 </Project>
