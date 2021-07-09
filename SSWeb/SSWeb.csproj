@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>9d9a491f-c0ac-4b33-903b-48452bddaaa8</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -21,7 +22,6 @@
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\Home\" />
     <Folder Include="wwwroot\css\" />
-    <Folder Include="Views\About\" />
     <Folder Include="Views\About %28copy%29\" />
   </ItemGroup>
 
