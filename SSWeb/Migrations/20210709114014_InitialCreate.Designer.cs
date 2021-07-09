@@ -10,8 +10,8 @@ using SSWeb.Data;
 namespace SSWeb.Migrations
 {
     [DbContext(typeof(SSWebContext))]
-    [Migration("20210623133217_EditAccount_RemoveRegistrationDate")]
-    partial class EditAccount_RemoveRegistrationDate
+    [Migration("20210709114014_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

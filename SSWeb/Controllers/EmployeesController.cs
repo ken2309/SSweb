@@ -22,7 +22,9 @@ namespace SSWeb.Controllers
         // GET: Employees
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Employees.ToListAsync());
+            var data= await _context.Employees.ToListAsync();
+
+            return View(data);
         }
 
         // GET: Employees/Details/5
