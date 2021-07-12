@@ -20,18 +20,18 @@ namespace SSWeb.Controllers
         }
 
         // GET: Products
-        //public async Task<IActionResult> Index()
-        //{
-        //var sSWebContext = _context.Products.Include(p => p.ProductType);
-
-        //return View(await sSWebContext.ToListAsync());
-        //return View();
-        //}
-
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+        var sSWebContext = _context.Products.Include(p => p.ProductType);
+
+        return View(await sSWebContext.ToListAsync());
+        //return View();
         }
+
+        /*        public IActionResult Index()
+                {
+                    return View();
+                }*/
 
         // GET: Products/Details/5
         public async Task<IActionResult> Details(int? id)

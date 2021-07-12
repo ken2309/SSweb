@@ -37,8 +37,16 @@ $(document).ready(function() {
       return false;
     });
     $('#btn-plus').click(function(){
-      var val = $("#var-value").html();
-      val++;
+        var val = $("#var-value").html();
+        var stock = $("stock");
+        console.log(stock.innerText);
+        if (val == stock) {
+            val == stock;
+            console.log(stock);
+        }
+        else {
+            val++;
+        }
       $("#var-value").html(val);
       $("#product-quanity").val(val);
       return false;
