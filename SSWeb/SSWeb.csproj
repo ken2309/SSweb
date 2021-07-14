@@ -32,10 +32,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="Areas\Admin\Views\Shared\404.cshtml" />
     <Content Remove="wwwroot\css\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Views\About\" />
     <None Remove="Views\About %28copy%29\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Areas\Admin\Views\Shared\404.cshtml" />
   </ItemGroup>
 </Project>
