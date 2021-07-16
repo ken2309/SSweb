@@ -76,6 +76,31 @@ namespace SSWeb.Controllers
             return View(product);
         }
 
+        /// Thêm sản phẩm vào cart
+        [Route("addcart/{productid:int}")]
+        public async Task<IActionResult> AddToCart([FromRoute] int productid)
+        {
+
+            var product = _context.Products
+                            .Where(p => p.Id == productid)
+                            .FirstOrDefault();
+            
+            if (product == null)
+                return NotFound("Không có sản phẩm");
+            _context.Carts.Add(new Cart
+                {
+                    ProductId = productid,
+                    CustomerId = 1,
+                    Quantity = 1
+                }) ;
+            await _context.SaveChangesAsync();
+            ViewData["CustomerId"] = new SelectList(_context.Customers, "Id", "Username", 1);
+            ViewData["ProductId"] = new SelectList(_context.Products, "Id", "Id", productid);
+
+
+            return RedirectToAction("Index", "Carts");
+        }
+
         // GET: Products/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {

@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SSWeb.Data;
 using SSWeb.Models;
@@ -24,9 +21,10 @@ namespace SSWeb.Controllers
         {
             return View(await _context.Customers.ToListAsync());
         }
-
+        
         // GET: Customers/Details/5
         public async Task<IActionResult> Details(int? id)
+
         {
             if (id == null)
             {
@@ -154,14 +152,18 @@ namespace SSWeb.Controllers
         {
             return View();
         }
-
+       // [TempData]
+       // public Customer Message { get; set; }
         [HttpPost]
-        public IActionResult Login(string username, string password)
+        public async Task<IActionResult> LoginAsync(string username, string password)
         {
             bool result = _context.Customers.Any(acc => acc.Username == username && acc.Password == password);
             if (result)
             {
-                return RedirectToAction("Index", "Home");
+                var c = _context.Customers.SingleOrDefault(i => i.Username == username && i.Status == true);
+                await _context.SaveChangesAsync();
+               // Message = c;
+                return RedirectToAction("Index", "Home", c);
             }
             else
             {
