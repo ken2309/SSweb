@@ -14,5 +14,6 @@ namespace SSWeb.Areas.Admin.Controllers
         {
             return View();
         }
+
     }
 }
