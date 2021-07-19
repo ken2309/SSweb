@@ -152,6 +152,7 @@ namespace SSWeb.Controllers
             return _context.Employees.Any(e => e.Id == id);
         }
 
+        [Route("admin/login")]
         public IActionResult Login()
         {
             return View();
