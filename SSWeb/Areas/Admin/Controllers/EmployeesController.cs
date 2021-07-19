@@ -151,14 +151,9 @@ namespace SSWeb.Areas.Admin.Controllers
             return _context.Employees.Any(e => e.Id == id);
         }
 
-        [Route("admin/login")]
-        public IActionResult Login()
-        {
-            return View();
-        }
 
-        [HttpPost]
-       
+        [HttpPost, ActionName("Login")]
+
         public IActionResult Login(string username, string password)
         {
             bool result = _context.Employees.Any(acc => acc.Username == username && acc.Password == password);
